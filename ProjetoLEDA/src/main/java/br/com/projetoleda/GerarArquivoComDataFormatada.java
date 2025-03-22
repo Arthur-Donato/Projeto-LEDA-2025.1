@@ -9,8 +9,8 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 public class GerarArquivoComDataFormatada {
-    private static String caminhoDoArquivoParaSerLido = "./Dados/games.csv";
-    final static String ARQUIVO_GERADO = "./Dados/games_formated_release_data.csv";
+    private static final String caminhoDoArquivoParaSerLido = "./Dados/games.csv";
+    private static final String ARQUIVO_GERADO = "./Dados/games_formated_release_data.csv";
 
 
     public static void escrevendoArquivoComDatasFormatadas(){
@@ -32,7 +32,7 @@ public class GerarArquivoComDataFormatada {
         }
     }
 
-    public static String[] formatarDados(CSVRecord record){
+    public static Object[] formatarDados(CSVRecord record){
         String[] dadosFormatados = new String[record.size()];
 
         for(int i = 0; i < record.size(); i++){

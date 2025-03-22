@@ -8,6 +8,7 @@ public class Main {
 
         //GerarArquivoComDataFormatada.escrevendoArquivoComDatasFormatadas();
         GerarArquivoLinux.escrevendoArquivoComSuporteLinux();
+        GerarArquivoComSuporteParaLinguaPortuguesa.escrevendoArquivoComSuporteParaLinguaPortuguesa();
 
     
     }
