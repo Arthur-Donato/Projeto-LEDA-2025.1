@@ -8,7 +8,6 @@ import java.io.IOException;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
-
 public class GerarArquivoComDataFormatada {
     private static String caminhoDoArquivoParaSerLido = "./Dados/games.csv";
     final static String ARQUIVO_GERADO = "./Dados/games_formated_release_data.csv";

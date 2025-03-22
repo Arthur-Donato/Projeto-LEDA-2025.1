@@ -6,7 +6,8 @@ public class Main {
         System.out.println("Hello world!");
         
 
-        GameCSV.escrevendoArquivoComDatasFormatadas();
+        //GerarArquivoComDataFormatada.escrevendoArquivoComDatasFormatadas();
+        GerarArquivoLinux.escrevendoArquivoComSuporteLinux();
 
     
     }
