@@ -25,7 +25,7 @@ public class GerarArquivoComSuporteParaLinguaPortuguesa {
                 if(record.getRecordNumber() == 1){
                     escritorDeArquivo.printRecord(record);
                 }
-                else if(formatarDados(record).length != 0){
+                else if(record.get(10).contains("'Portuguese - Brazil'")){
                     escritorDeArquivo.printRecord(formatarDados(record));
                 }
             }

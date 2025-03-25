@@ -6,7 +6,7 @@ public class Main {
         System.out.println("Hello world!");
         
 
-        //GerarArquivoComDataFormatada.escrevendoArquivoComDatasFormatadas();
+        GerarArquivoComDataFormatada.escrevendoArquivoComDatasFormatadas();
         GerarArquivoLinux.escrevendoArquivoComSuporteLinux();
         GerarArquivoComSuporteParaLinguaPortuguesa.escrevendoArquivoComSuporteParaLinguaPortuguesa();
 
