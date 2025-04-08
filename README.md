@@ -1,6 +1,6 @@
 # Projeto de Laboratório de Estrutura de Dados
 
-Este projeto tem a finalidade ordenar os dados contidos em um arquivo ".csv" e gerar três novos arquivos ".csv", cada um com uma ordenação diferente.
+Esta primeira entrega do projeto da disciplina Laboratório de Estrutura de Dados tem a finalidade transformar os dados contidos em um arquivo ".csv" e gerar três novos arquivos também ".csv", cada um com filtro diferente.
 
 ## 📥 Passo a Passo para Execução do Projeto
 
