@@ -23,7 +23,7 @@ public class FormatarData {
                 dataFormatada = formatoDeSaida.format(data);
 
             } catch (ParseException e) {
-                e.printStackTrace();
+               
             }
             
             return dataFormatada;
