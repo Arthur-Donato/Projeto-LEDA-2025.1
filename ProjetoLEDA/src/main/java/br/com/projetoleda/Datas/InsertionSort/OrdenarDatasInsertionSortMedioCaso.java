@@ -1,19 +1,21 @@
-package br.com.projetoleda.Conquistas.QuickSort;
+package br.com.projetoleda.Datas.InsertionSort;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 
-public class OrdenarConquistasQuickSortMedioCaso {
+public class OrdenarDatasInsertionSortMedioCaso {
     private static final String caminhoArquivoParaSerLido = "./Dados/games_formated_release_data.csv";
-    private static final String CAMINHO_ARQUIVO_GERADO = "./Dados/games_achievements_QuickSort_medioCaso.csv";
-
+    private static final String CAMINHO_ARQUIVO_GERADO = "./Dados/games_release_date_InsertionSort_medioCaso.csv";
     public static void gerarArquivo() {
         
         try{
@@ -34,6 +36,10 @@ public class OrdenarConquistasQuickSortMedioCaso {
             CSVParser parser = CSVFormat.RFC4180.parse(leitorFinal);
             
             CSVRecord[] lista = new CSVRecord[contadorLinhas];
+            Date[] datas = new Date[contadorLinhas];
+
+            SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
+            dataFormatada.setLenient(false);
 
             int i = 0;
             for(CSVRecord record : parser) {
@@ -42,12 +48,22 @@ public class OrdenarConquistasQuickSortMedioCaso {
                 }
                 else if(record.size() > 2){
                     lista[i] = record;
+                    try{
+                        datas[i] = dataFormatada.parse(record.get(2));
+                    } catch(ParseException | NullPointerException e){
+                        
+                        try{
+                            datas[i]  = new SimpleDateFormat("dd/MM/yyyy").parse("01/01/0001");
+                        } catch(ParseException ex){
+                            datas[i] =  new Date(0);
+                        }
+                    }
                     i++;
                 }
                 
             }
             
-            quickSort(lista, 0, lista.length - 1);
+            insertionSort(lista, datas, 0, lista.length - 1);
 
             for(CSVRecord record : lista){
                 escritorDeArquivo.printRecord(record);
@@ -62,47 +78,20 @@ public class OrdenarConquistasQuickSortMedioCaso {
         }
     }
 
-    public static void quickSort(CSVRecord[] lista, int primeiroIndice, int ultimoIndice){
-        if(primeiroIndice < ultimoIndice){
-            int pivot = particaoPivotQuickSort(lista, primeiroIndice, ultimoIndice);
-            quickSort(lista, primeiroIndice, pivot - 1);
-            quickSort(lista, pivot + 1, ultimoIndice);
-        }
-    }
-
-    public static int particaoPivotQuickSort(CSVRecord[] lista, int primeiroIndice, int ultimoIndice) {
-    double pivot = extrairValor(lista, primeiroIndice);
-    int i = primeiroIndice - 1;
-    int j = ultimoIndice + 1;
-
-    while (true) {
-        do {
-            i++;
-        } while (extrairValor(lista, i) > pivot);
-
-        do {
-            j--;
-        } while (extrairValor(lista, j) < pivot);
-
-        if (i >= j) {
-            return j;
+    public static void insertionSort(CSVRecord[] lista, Date[] conquistas, int primeiroIndice, int ultimoIndice){
+        for(int j = primeiroIndice + 1; j < ultimoIndice; j++){
+            Date dataPosicaoJ = conquistas[j];
+            CSVRecord chave = lista[j];
+            Date chaveData = conquistas[j];
+            int i = j - 1;
+            while(i >= primeiroIndice && conquistas[i].compareTo(dataPosicaoJ) > 0){
+                lista[i + 1] = lista[i];
+                conquistas[i + 1] = conquistas[i];
+                i--;
+            }
+            lista[i + 1] = chave;
+            conquistas[i + 1] = chaveData;
         }
 
-        trocarElementos(lista, i, j);
-    }
-}
-
-    public static void trocarElementos(CSVRecord[] lista, int primeiroIndice, int segundoIndice){
-        CSVRecord recordTemporario = lista[primeiroIndice];
-        lista[primeiroIndice] = lista[segundoIndice];
-        lista[segundoIndice] = recordTemporario;
-    }
-
-    public static int extrairValor(CSVRecord[] lista, int indice){
-        try{
-            return Integer.parseInt(lista[indice].get(26));
-        }catch(Exception e){
-            return 0;
-        }
     }
 }

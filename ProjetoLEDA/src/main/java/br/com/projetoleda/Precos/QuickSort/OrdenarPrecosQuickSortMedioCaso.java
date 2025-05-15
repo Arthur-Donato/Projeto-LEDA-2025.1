@@ -1,4 +1,4 @@
-package br.com.projetoleda.Conquistas.QuickSort;
+package br.com.projetoleda.Precos.QuickSort;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,9 +10,9 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 
-public class OrdenarConquistasQuickSortMedioCaso {
+public class OrdenarPrecosQuickSortMedioCaso {
     private static final String caminhoArquivoParaSerLido = "./Dados/games_formated_release_data.csv";
-    private static final String CAMINHO_ARQUIVO_GERADO = "./Dados/games_achievements_QuickSort_medioCaso.csv";
+    private static final String CAMINHO_ARQUIVO_GERADO = "./Dados/games_price_QuickSort_medioCaso.csv";
 
     public static void gerarArquivo() {
         
@@ -78,11 +78,11 @@ public class OrdenarConquistasQuickSortMedioCaso {
     while (true) {
         do {
             i++;
-        } while (extrairValor(lista, i) > pivot);
+        } while (extrairValor(lista, i) < pivot); // DESCRESCENTE
 
         do {
             j--;
-        } while (extrairValor(lista, j) < pivot);
+        } while (extrairValor(lista, j) > pivot); // DESCRESCENTE
 
         if (i >= j) {
             return j;
@@ -98,11 +98,11 @@ public class OrdenarConquistasQuickSortMedioCaso {
         lista[segundoIndice] = recordTemporario;
     }
 
-    public static int extrairValor(CSVRecord[] lista, int indice){
+    public static double extrairValor(CSVRecord[] lista, int indice){
         try{
-            return Integer.parseInt(lista[indice].get(26));
+            return Double.parseDouble(lista[indice].get(6));
         }catch(Exception e){
-            return 0;
+            return 0.0;
         }
     }
 }

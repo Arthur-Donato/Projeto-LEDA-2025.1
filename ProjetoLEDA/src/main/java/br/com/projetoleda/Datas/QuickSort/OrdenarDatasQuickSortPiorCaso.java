@@ -1,19 +1,21 @@
-package br.com.projetoleda.Conquistas.QuickSort;
+package br.com.projetoleda.Datas.QuickSort;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 
-public class OrdenarConquistasQuickSortMedioCaso {
-    private static final String caminhoArquivoParaSerLido = "./Dados/games_formated_release_data.csv";
-    private static final String CAMINHO_ARQUIVO_GERADO = "./Dados/games_achievements_QuickSort_medioCaso.csv";
-
+public class OrdenarDatasQuickSortPiorCaso {
+    private static final String caminhoArquivoParaSerLido = "./Dados/games_releaseData_Invertido.csv";
+    private static final String CAMINHO_ARQUIVO_GERADO = "./Dados/games_release_date_QuickSort_piorCaso.csv";
     public static void gerarArquivo() {
         
         try{
@@ -65,24 +67,25 @@ public class OrdenarConquistasQuickSortMedioCaso {
     public static void quickSort(CSVRecord[] lista, int primeiroIndice, int ultimoIndice){
         if(primeiroIndice < ultimoIndice){
             int pivot = particaoPivotQuickSort(lista, primeiroIndice, ultimoIndice);
-            quickSort(lista, primeiroIndice, pivot - 1);
+            quickSort(lista, primeiroIndice, pivot);
             quickSort(lista, pivot + 1, ultimoIndice);
         }
     }
 
     public static int particaoPivotQuickSort(CSVRecord[] lista, int primeiroIndice, int ultimoIndice) {
-    double pivot = extrairValor(lista, primeiroIndice);
+    Date pivot = extrairValor(lista, primeiroIndice);
+    System.out.println("Analisando o pivot: " + pivot );
     int i = primeiroIndice - 1;
     int j = ultimoIndice + 1;
 
     while (true) {
         do {
             i++;
-        } while (extrairValor(lista, i) > pivot);
+        } while (extrairValor(lista, i).compareTo(pivot) < 0); // DESCRESCENTE
 
         do {
             j--;
-        } while (extrairValor(lista, j) < pivot);
+        } while (extrairValor(lista, j).compareTo(pivot) > 0); // DESCRESCENTE
 
         if (i >= j) {
             return j;
@@ -98,11 +101,18 @@ public class OrdenarConquistasQuickSortMedioCaso {
         lista[segundoIndice] = recordTemporario;
     }
 
-    public static int extrairValor(CSVRecord[] lista, int indice){
+    public static Date extrairValor(CSVRecord[] lista, int indice){
         try{
-            return Integer.parseInt(lista[indice].get(26));
-        }catch(Exception e){
-            return 0;
+
+            String data = lista[indice].get(2);
+            SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
+            dataFormatada.setLenient(false);
+
+            return dataFormatada.parse(data);
+
+        }catch(ParseException | NullPointerException e ){
+
+            return new Date(0);
         }
     }
 }
