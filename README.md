@@ -20,4 +20,11 @@ Esta primeira entrega do projeto da disciplina Laboratório de Estrutura de Dado
 1. Dentro da sua IDE abra a pasta principal onde se encontra o projeto clonado;
 2. Vá para subpasta "Projeto";
 3. Navegue por "scr" --> "main" --> "java" --> "Main.java";
-4. Execute o arquivo main.
+4. Execute o arquivo main para transformar os arquivos e gerar os arquivos de ordem inversa.
+
+## 📝 Ordenção dos Arquivos
+
+1. Após executar o "Main.java" e gerar todos os arquivos necessários para ordenação;
+2. Vá para as pastas nomeadas com suas respectivas ordenações e dentro terá uma pasta referente para cada algoritmo utilizado;
+3. Dentro das pastas do algoritmos execute o arquivo "GerarArquivo..." e os arquivos relacionados aquele algoritmo serão gerados;
+4. Dentro da pasta "Dados" estarão todos os arquivos gerados.
