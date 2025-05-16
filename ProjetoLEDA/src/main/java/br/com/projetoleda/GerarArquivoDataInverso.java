@@ -16,7 +16,7 @@ import org.apache.commons.csv.CSVRecord;
 public class GerarArquivoDataInverso { 
     private static final String caminhoArquivoParaSerLido = "./Dados/games_formated_release_data.csv";
     private static final String CAMINHO_ARQUIVO_GERADO = "./Dados/games_releaseData_Invertido.csv";
-    public static void main(String[] args) {
+    public static void gerarArquivo() {
         
         try{
             FileReader leitorDoArquivo = new FileReader(caminhoArquivoParaSerLido);

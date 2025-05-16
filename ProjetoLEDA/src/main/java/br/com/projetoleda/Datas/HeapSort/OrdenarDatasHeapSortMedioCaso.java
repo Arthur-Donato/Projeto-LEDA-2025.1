@@ -67,16 +67,12 @@ public class OrdenarDatasHeapSortMedioCaso {
 
     static void heapify(CSVRecord[] lista, int n, int i) {
 
-        // Initialize largest as root
         int largest = i; 
 
-        // left index = 2*i + 1
         int l = 2 * i + 1; 
 
-        // right index = 2*i + 2
         int r = 2 * i + 2;
 
-        // If left child is larger than root
         
         Date dataMaior = extrairValor(lista, largest);
 
@@ -88,7 +84,6 @@ public class OrdenarDatasHeapSortMedioCaso {
             }
         }
 
-        // If right child is larger than largest so far
         if(r < n){
             Date dataNoDireito = extrairValor(lista, r);
             if(dataNoDireito.compareTo(dataMaior) > 0){
@@ -96,35 +91,28 @@ public class OrdenarDatasHeapSortMedioCaso {
             }
         }
 
-        // If largest is not root
         if (largest != i) {
             CSVRecord temp = lista[i];
             lista[i] = lista[largest];
             lista[largest] = temp;
 
-            // Recursively heapify the affected sub-tree
             heapify(lista, n, largest);
         }
     }
 
-    // Main function to do heap sort
     static void heapSort(CSVRecord[] lista) {
         int n = lista.length;
 
-        // Build heap (rearrange array)
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(lista, n, i);
         }
 
-        // One by one extract an element from heap
         for (int i = n - 1; i > 0; i--) {
 
-            // Move current root to end
             CSVRecord temp = lista[0]; 
             lista[0] = lista[i];
             lista[i] = temp;
 
-            // Call max heapify on the reduced heap
             heapify(lista, i, 0);
         }
     }

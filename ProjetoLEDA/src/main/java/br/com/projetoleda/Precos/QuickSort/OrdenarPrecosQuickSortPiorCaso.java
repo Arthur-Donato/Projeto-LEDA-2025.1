@@ -78,11 +78,11 @@ public class OrdenarPrecosQuickSortPiorCaso {
     while (true) {
         do {
             i++;
-        } while (extrairValor(lista, i) < pivot); // DESCRESCENTE
+        } while (extrairValor(lista, i) < pivot);
 
         do {
             j--;
-        } while (extrairValor(lista, j) > pivot); // DESCRESCENTE
+        } while (extrairValor(lista, j) > pivot);
 
         if (i >= j) {
             return j;

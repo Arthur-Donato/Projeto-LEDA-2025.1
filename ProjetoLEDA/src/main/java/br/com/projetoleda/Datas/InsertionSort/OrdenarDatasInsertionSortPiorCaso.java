@@ -47,7 +47,6 @@ public class OrdenarDatasInsertionSortPiorCaso {
                     try {
                         datas[i] = dataFormatada.parse(record.get(2));
                     } catch (ParseException | NullPointerException e) {
-                        // Fallback para data inválida
                         datas[i] = new SimpleDateFormat("dd/MM/yyyy").parse("01/01/0001");
                     }
                     i++;

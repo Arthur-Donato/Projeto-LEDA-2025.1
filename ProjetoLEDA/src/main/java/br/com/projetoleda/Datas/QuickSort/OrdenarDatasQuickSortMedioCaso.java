@@ -80,11 +80,11 @@ public class OrdenarDatasQuickSortMedioCaso {
     while (true) {
         do {
             i++;
-        } while (extrairValor(lista, i).compareTo(pivot) < 0); // DESCRESCENTE
+        } while (extrairValor(lista, i).compareTo(pivot) < 0);
 
         do {
             j--;
-        } while (extrairValor(lista, j).compareTo(pivot) > 0); // DESCRESCENTE
+        } while (extrairValor(lista, j).compareTo(pivot) > 0);
 
         if (i >= j) {
             return j;

@@ -84,11 +84,11 @@ public class OrdenarConquistasQuickSortMediana3MelhorCaso {
     while (true) {
         do {
             i++;
-        } while (extrairValor(lista, i) > pivotValor); // Ordem decrescente
+        } while (extrairValor(lista, i) > pivotValor);
 
         do {
             j--;
-        } while (extrairValor(lista, j) < pivotValor); // Ordem decrescente
+        } while (extrairValor(lista, j) < pivotValor);
 
         if (i >= j) {
             return j;
