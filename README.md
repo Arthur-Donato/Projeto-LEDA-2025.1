@@ -28,3 +28,6 @@ Esta primeira entrega do projeto da disciplina Laboratório de Estrutura de Dado
 2. Vá para as pastas nomeadas com suas respectivas ordenações e dentro terá uma pasta referente para cada algoritmo utilizado;
 3. Dentro das pastas do algoritmos execute o arquivo "GerarArquivo..." e os arquivos relacionados aquele algoritmo serão gerados;
 4. Dentro da pasta "Dados" estarão todos os arquivos gerados.
+
+## 📋 Relatório do projeto
+[RelatórioProjeto.pdf](https://github.com/Arthur-Donato/Projeto-LEDA-2025.1/blob/0633562c9e4cecdefbeb02233ebda81cbf9a85e4/Relat%C3%B3rioProjeto.pdf)
