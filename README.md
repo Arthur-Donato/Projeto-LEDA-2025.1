@@ -6,7 +6,6 @@ Esta primeira entrega do projeto da disciplina Laboratório de Estrutura de Dado
 
 ### 1. Organização das pastas
 - Crie uma pasta principal com o nome que preferir;
-- Dentro dessa pasta crie duas subpastas, uma chamada "Dados" e outra chamada "Projeto";
 
 ### 2. Arquivo CSV
 - Baixe o arquivo ".csv" fornecido no link (https://www.kaggle.com/datasets/fronkongames/steam-games-dataset);
