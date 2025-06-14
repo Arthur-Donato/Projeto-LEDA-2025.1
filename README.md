@@ -17,7 +17,7 @@ Esta primeira entrega do projeto da disciplina Laboratório de Estrutura de Dado
 
 ## ▶️ Como Executar 
 
-1. Dentro da sua IDE procure a opção "Open Project" ou "Novo Projeto" e selecione a pasta criada inicialmente para armazenar a pasta "Dados" e a pasta do projeto exportado;
+1. Dentro da sua IDE procure a opção "Open Project" ou "Novo Projeto" e selecione a pasta criada inicialmente;
 2. Navegue por "scr" --> "main" --> "java" --> "Main.java";
 2. Execute o arquivo main para transformar os arquivos e gerar os arquivos de ordem inversa.
 
