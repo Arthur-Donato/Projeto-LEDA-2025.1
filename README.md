@@ -6,20 +6,20 @@ Esta primeira entrega do projeto da disciplina Laboratório de Estrutura de Dado
 
 ### 1. Organização das pastas
 - Crie uma pasta principal com o nome que preferir;
+- Dentro dessa pasta crie uma subpasta chamada "Dados";
 
 ### 2. Arquivo CSV
 - Baixe o arquivo ".csv" fornecido no link (https://www.kaggle.com/datasets/fronkongames/steam-games-dataset);
 - Extraia os arquivos para a subpasta chamada "Dados" e garanta que exista um arquivo chamado "games.csv"
 
-### 3. Clonagem do projeto
-- Clone esse projeto dentro da subpasta chama "Projeto" usando o comando "git clone https://github.com/Arthur-Donato/Projeto-LEDA-2025.1"
+### 3. Exportação do projeto
+- Exporte esse projeto para a pasta criada inicialmente extraindo os arquivos do .zip forncenido no github do projeto;
 
 ## ▶️ Como Executar 
 
-1. Dentro da sua IDE abra a pasta principal onde se encontra o projeto clonado;
-2. Vá para subpasta "Projeto";
-3. Navegue por "scr" --> "main" --> "java" --> "Main.java";
-4. Execute o arquivo main para transformar os arquivos e gerar os arquivos de ordem inversa.
+1. Dentro da sua IDE procure a opção "Open Project" ou "Novo Projeto" e selecione a pasta criada inicialmente para armazenar a pasta "Dados" e a pasta do projeto exportado;
+2. Navegue por "scr" --> "main" --> "java" --> "Main.java";
+2. Execute o arquivo main para transformar os arquivos e gerar os arquivos de ordem inversa.
 
 ## 📝 Ordenção dos Arquivos
 
